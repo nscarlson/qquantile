@@ -1,6 +1,6 @@
 {
     "name": "qquantile",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "description": "Calculate arbitrary quantiles",
     "main": "quantile.js",
     "repository": "git@github.com:nscarlson/quantile",
@@ -9,7 +9,7 @@
     "scripts": {
         "test": "jest"
     },
-    "dependencies": {
+    "devDependencies": {
         "jest": "^24.1.0"
     }
 }
