@@ -1,4 +1,4 @@
-const {quantiles, quantileGroups} = require('./quantile')
+const { quantiles, quantileGroups } = require('./quantile')
 
 describe('quintile', () => {
     const arr10 = [3, 6, 7, 8, 8, 10, 13, 15, 16, 20]
@@ -30,6 +30,10 @@ describe('quintile', () => {
             [ 10, 13, 15 ],
             [ 16, 20 ]
         ])
+    })
+
+    it('returns the correct quartiles for even-numbered sets', () => {
+        expect(quantiles(arr10, 4)).toEqual([7, 9, 15, 20])
     })
 
     it('returns the correct quartile groups for odd-numbered sets', () => {
