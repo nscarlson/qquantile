@@ -1,45 +1,49 @@
-const {quantile, quantileGroups} = require('./quantile')
+const {quantiles, quantileGroups} = require('./quantile')
 
 describe('quintile', () => {
-    const arr = [
-        8,
-        1,
-        10,
-        2,
-        6,
-        3,
-        4,
-        5,
-        7,
-        9,
-    ]
+    const arr10 = [3, 6, 7, 8, 8, 10, 13, 15, 16, 20]
+    const arr11 = [3, 6, 7, 8, 8, 9, 10, 13, 15, 16, 20]
 
     it('returns the correct quintile', () => {
-        quantileType = 5
-
-        expect(quantile(arr, 1, quantileType)).toEqual([1, 2])
-        expect(quantile(arr, 2, quantileType)).toEqual([3, 4])
-        expect(quantile(arr, 3, quantileType)).toEqual([5, 6])
-        expect(quantile(arr, 4, quantileType)).toEqual([7, 8])
-        expect(quantile(arr, 5, quantileType)).toEqual([9, 10])
+        expect(quantiles(arr10, 5)[1 - 1]).toEqual(6)
+        expect(quantiles(arr10, 5)[2 - 1]).toEqual(8)
+        expect(quantiles(arr10, 5)[3 - 1]).toEqual(10)
+        expect(quantiles(arr10, 5)[4 - 1]).toEqual(15)
+        expect(quantiles(arr10, 5)[5 - 1]).toEqual(20)
+        expect(quantiles(arr10, 5)).toEqual([6, 8, 10, 15, 20])
     })
 
-    it('returns correct quantile groups', () => {
-        expect(quantileGroups(arr, 5)).toEqual([
-            [1, 2],
-            [3, 4],
-            [5, 6],
+    it('returns correct quintile groups', () => {
+        expect(quantileGroups(arr10, 5)).toEqual([
+            [3, 6],
             [7, 8],
-            [9, 10]
+            [8, 10],
+            [13, 15],
+            [16, 20]
         ])
     })
 
-    it('returns all the quartile groups', () => {
-        expect(quantileGroups(arr, 4)).toEqual([
-            [1, 2, 3],
-            [4, 5, 6],
-            [7, 8],
-            [9, 10],
+    it('returns the correct quartile groups for even-numbered sets', () => {
+        expect(quantileGroups(arr10, 4)).toEqual([
+            [ 3, 6, 7 ],
+            [ 8, 8 ],
+            [ 10, 13, 15 ],
+            [ 16, 20 ]
         ])
+    })
+
+    it('returns the correct quartile groups for odd-numbered sets', () => {
+        expect(quantileGroups(arr11, 4)).toEqual([
+            [ 3, 6, 7 ],
+            [ 8, 8, 9],
+            [ 10, 13, 15 ],
+            [ 16, 20 ]
+        ])
+    })
+
+    it('returns the correct quantiles for even-numbered sets with even q-quantile', () => {
+        expect(quantiles(arr10, 2)[1 - 1]).toEqual(9)
+        expect(quantiles(arr10, 2)[2 - 1]).toEqual(20)
+        expect(quantiles(arr10, 2)).toEqual([9, 20])
     })
 })
