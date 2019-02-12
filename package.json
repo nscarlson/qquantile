@@ -1,15 +1,15 @@
 {
-  "name": "quantile",
-  "version": "1.0.0",
-  "description": "Calculate arbitrary quantiles",
-  "main": "index.js",
-  "repository": "git@github.com:nscarlson/quantile",
-  "author": "Nathan Carlson <nathan.s.carlson@gmail.com>",
-  "license": "MIT",
-  "scripts": {
-    "test": "jest"
-  },
-  "dependencies": {
-    "jest": "^24.1.0"
-  }
+    "name": "quantile",
+    "version": "1.0.0",
+    "description": "Calculate arbitrary quantiles",
+    "main": "quantile.js",
+    "repository": "git@github.com:nscarlson/quantile",
+    "author": "Nathan Carlson <nathan.s.carlson@gmail.com>",
+    "license": "MIT",
+    "scripts": {
+        "test": "jest"
+    },
+    "dependencies": {
+        "jest": "^24.1.0"
+    }
 }
