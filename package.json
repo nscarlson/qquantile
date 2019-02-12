@@ -1,5 +1,5 @@
 {
-    "name": "quantile",
+    "name": "qquantile",
     "version": "1.0.0",
     "description": "Calculate arbitrary quantiles",
     "main": "quantile.js",
