@@ -1,5 +1,8 @@
-# quantile
-Calculate arbitrary quantiles
+[![Maintainability](https://api.codeclimate.com/v1/badges/e2a2afcf3c697aac3f1a/maintainability)](https://codeclimate.com/github/nscarlson/qquantile/maintainability)
+[![Test Coverage](https://api.codeclimate.com/v1/badges/e2a2afcf3c697aac3f1a/test_coverage)](https://codeclimate.com/github/nscarlson/qquantile/test_coverage)
+
+# qquantile
+Calculate arbitrary q-quantiles
 
 ## Setup
 - Run `yarn` to bootstrap dependencies
