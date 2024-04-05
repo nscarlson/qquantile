@@ -19,16 +19,16 @@ describe('quintile', () => {
             [7, 8],
             [8, 10],
             [13, 15],
-            [16, 20]
+            [16, 20],
         ])
     })
 
     it('returns the correct quartile groups for even-numbered sets', () => {
         expect(quantileGroups(arr10, 4)).toEqual([
-            [ 3, 6, 7 ],
-            [ 8, 8 ],
-            [ 10, 13, 15 ],
-            [ 16, 20 ]
+            [3, 6, 7],
+            [8, 8],
+            [10, 13, 15],
+            [16, 20],
         ])
     })
 
@@ -38,10 +38,10 @@ describe('quintile', () => {
 
     it('returns the correct quartile groups for odd-numbered sets', () => {
         expect(quantileGroups(arr11, 4)).toEqual([
-            [ 3, 6, 7 ],
-            [ 8, 8, 9],
-            [ 10, 13, 15 ],
-            [ 16, 20 ]
+            [3, 6, 7],
+            [8, 8, 9],
+            [10, 13, 15],
+            [16, 20],
         ])
     })
 
